@@ -433,6 +433,9 @@
       let calcPrecio = ((precioVal * 950) / 0.84) + 1000;
       calcPrecio = Math.ceil(calcPrecio / 100) * 100;
 
+      const priceMap = { "0":"O","1":"M","2":"U","3":"R","4":"C","5":"I","6":"E","7":"L","8":"A","9":"G", ",":"-", ".":"-" };
+      const codigoPrecio = getVal("precio").split("").map(ch => priceMap[ch] || ch).join("");
+
       const row = [
         "", tituloVal, "", estado, "",
         activeURL,
